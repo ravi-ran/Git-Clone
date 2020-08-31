@@ -29,6 +29,7 @@
     </ng-template>
 </p-dataView>
 
+ <!-- User details modal -->
 <p-dialog header="User Details" [(visible)]="showUserDetailsModal" [modal]="true" [baseZIndex]="10000" [draggable]="false"
   [resizable]="false" class="show-user-model">
   <div class="p-grid">
@@ -46,6 +47,7 @@
   </div>
 </p-dialog>
 
+<!-- configuring the http loader which will display spinner on every request sent through http  -->
 <ng-http-loader 
     [minDuration]="1000"
     [opacity]=".6"
