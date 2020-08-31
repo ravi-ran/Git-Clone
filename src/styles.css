@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+.show-user-model .p-dialog .p-dialog-header {
+    background: brown;
+}
+
+.show-user-model .p-dialog .p-dialog-header .p-dialog-title,
+.show-user-model .p-dialog .p-dialog-header .p-dialog-header-icon {
+    color: white;
+}
+
+.repo-details-card .p-card {
+    height: 250px;
+}
+
+.show-user-model .p-dialog {
+    background: brown;
+    width: 90%;
+}

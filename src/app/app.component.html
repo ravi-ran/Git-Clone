@@ -1,0 +1,53 @@
+<p-dataView #dv [value]="usersList" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="login" *ngIf = 'isDataReady'>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="p-grid">
+                <div class="p-col-12 filter-container">
+                    <div style="position:relative">
+                        <input type="search" pInputText placeholder="Search by user name" (input)="dv.filter($event.target.value)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-user pTemplate="listItem">
+      <p-card class="p-col-4">
+        <div class="contact-details">
+          <div class="contact-card">
+            <div class="p-grid">
+                <div class="p-col-12 user-avatar-container">
+                  <img [src] = "user.avatar" class="user-avatar">
+                </div>
+                <div class="p-col-12 user-name-container"><b>{{user.login}} </b></div>
+                <div class="p-col-12 user-details-btn-container">
+                  <button pButton class="user-details-btn" label = 'User Repos Details' (click) = 'showUserDetails(user)'></button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </p-card>
+    </ng-template>
+</p-dataView>
+
+<p-dialog header="User Details" [(visible)]="showUserDetailsModal" [modal]="true" [baseZIndex]="10000" [draggable]="false"
+  [resizable]="false" class="show-user-model">
+  <div class="p-grid">
+    <p-card *ngFor = 'let repo of repoList' class="p-col-6 p-md-4 repo-details-card">
+      <div class="card-header-container">
+        <p-header>
+          {{repo.name}}
+        </p-header>
+      </div>
+      <div>
+        {{repo.desc}}
+      </div>
+    </p-card>
+
+  </div>
+</p-dialog>
+
+<ng-http-loader 
+    [minDuration]="1000"
+    [opacity]=".6"
+    [spinner]="spinnerStyle.skWanderingCubes">
+</ng-http-loader>

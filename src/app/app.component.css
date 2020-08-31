@@ -1,0 +1,53 @@
+.filter-container {
+    text-align: center;
+}
+
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-bottom: 1px solid #d9dad9;
+}
+
+.user-details > div {
+    display: flex;
+    align-items: center;
+}
+
+.user-details > div img {
+    margin-right: 14px;
+}
+
+.user-detail {
+    padding: 0 1em 1em 1em;
+    border-bottom: 1px solid #d9dad9;
+    margin: 1em;
+}
+
+.ui-panel-content {
+    padding: 1em;
+}
+
+
+.user-avatar {
+    width: 50%;
+}
+
+.user-avatar-container,
+.user-name-container,
+.user-details-btn-container {
+    text-align: center;
+}
+
+.user-details-btn {
+    background: brown;
+    border-radius: 20px;
+    border-color: brown;
+}
+
+.card-header-container {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
